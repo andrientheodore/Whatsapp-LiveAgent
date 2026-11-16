@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="description" content="Start a conversation with our support team." />
+    <title>Live chat</title>
+    <link rel="stylesheet" href="/full-view/styles.css" />
+    <script src="/full-view/chat.js" defer></script>
+  </head>
+  <body>
+    <main class="chat-page" aria-label="Live chat">
+      <section class="chat-card" aria-label="Contact form and live conversation">
+        <div class="loading" id="loading" role="status">
+          <span class="spinner" aria-hidden="true"></span>
+          <p id="loading-message">Loading your conversation…</p>
+          <button id="retry" type="button" hidden>Try again</button>
+        </div>
+        <iframe id="chat-frame" title="Contact form and live chat" sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+      </section>
+      <noscript><p>Enable JavaScript to use live chat.</p></noscript>
+    </main>
+  </body>
+</html>

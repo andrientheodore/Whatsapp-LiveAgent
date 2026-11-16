@@ -1,0 +1,23 @@
+html, body { width: 100%; height: 100%; margin: 0; }
+* { box-sizing: border-box; }
+body { color: #192131; background: #fff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; overflow: hidden; }
+body[data-view="contact"] { display: grid; grid-template-columns: 45% minmax(0, 1fr); }
+.welcome-panel { display: none; }
+body[data-view="contact"] .welcome-panel { display: flex; align-items: flex-end; padding: 32px; color: #fff; background: linear-gradient(125deg, #3b7be6, #305db4); }
+.welcome-content { width: 100%; }
+.welcome-wave { display: block; margin-bottom: 16px; font-size: 40px; line-height: 1.2; }
+.welcome-panel h1 { margin: 0; font-size: clamp(24px, 2.6vw, 36px); line-height: 1.2; font-weight: 750; letter-spacing: -.7px; }
+.welcome-agent { margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #edf3ff; }
+.welcome-note { display: flex; align-items: center; gap: 8px; margin: 18px 0 0; font-size: 13px; line-height: 1.5; color: #edf3ff; }
+.welcome-note svg { flex: 0 0 16px; width: 16px; height: 16px; }
+#chat-client { position: relative; min-width: 0; min-height: 0; width: 100%; height: 100%; }
+#sleekflow-widget-container { width: 100% !important; height: 100% !important; }
+@media (max-width: 767px) {
+  body[data-view="contact"] { display: flex; flex-direction: column; height: auto; min-height: 100%; overflow: auto; }
+  body[data-view="contact"] .welcome-panel { flex: none; min-height: 196px; padding: max(24px, env(safe-area-inset-top)) 24px 24px; }
+  .welcome-wave { margin-bottom: 12px; font-size: 34px; }
+  .welcome-panel h1 { font-size: 26px; }
+  .welcome-agent { margin-top: 8px; font-size: 14px; }
+  .welcome-note { margin-top: 12px; font-size: 12px; }
+  body[data-view="contact"] #chat-client { flex: 1; min-height: 620px; }
+}

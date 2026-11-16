@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A demonstration landing page for the SleekFlow live chat widget."
+    />
+    <title>Live Chat Widget Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Live Widget home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" role="img">
+            <path d="M7 6h18a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H14l-7 5v-5a3 3 0 0 1-3-3V9a3 3 0 0 1 3-3Z" />
+            <circle cx="11" cy="14" r="1.5" />
+            <circle cx="16" cy="14" r="1.5" />
+            <circle cx="21" cy="14" r="1.5" />
+          </svg>
+        </span>
+        <span>Live Widget</span>
+      </a>
+      <span class="status"><span class="status-dot"></span> Support is online</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">SleekFlow chat demo</div>
+        <h1>Questions?<br />Let&rsquo;s <span>chat.</span></h1>
+        <p class="intro">
+          This is a demonstration page for our live support experience. Open the
+          chat bubble in the bottom-right corner to start a conversation.
+        </p>
+        <div class="hint">
+          <span class="hint-icon" aria-hidden="true">↘</span>
+          <div>
+            <strong>Try the live widget</strong>
+            <span>Look for the chat button below</span>
+          </div>
+        </div>
+        <a class="section-link" href="/full-view/">Open chat page <span aria-hidden="true">↗</span></a>
+        <a class="section-link" href="#direct-to-chat">Explore direct-to-chat feasibility <span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section class="preview" aria-label="Live support preview">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <article class="chat-card">
+          <div class="chat-card-header">
+            <div class="avatar">LW<span class="online-dot"></span></div>
+            <div>
+              <strong>Live Support</strong>
+              <span>Typically replies instantly</span>
+            </div>
+          </div>
+          <div class="messages">
+            <div class="message message-in">Hi there! How can we help today?</div>
+            <div class="message message-out">I&rsquo;d like to learn more.</div>
+            <div class="typing" aria-label="Support agent is typing">
+              <i></i><i></i><i></i>
+            </div>
+          </div>
+          <div class="mock-input">
+            <span>Type a message&hellip;</span>
+            <span class="send" aria-hidden="true">↑</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="feasibility" id="direct-to-chat" aria-labelledby="feasibility-title">
+        <div class="section-heading">
+          <div class="eyebrow">Direct-to-chat feasibility</div>
+          <h2 id="feasibility-title">One link.<br /><span>Straight to chat.</span></h2>
+          <p class="section-intro">
+            The findings below document the previous legacy widget. This site now uses
+            the newer SleekFlow widget; contact identification still depends on
+            the integration methods supported by the provider.
+          </p>
+        </div>
+
+        <div class="findings-card">
+          <div class="card-heading">
+            <h3>Previous legacy-widget findings</h3>
+            <span class="report-label">Reported inspection</span>
+          </div>
+          <div class="table-scroll" role="region" aria-label="Widget capability findings" tabindex="0">
+            <table class="capability-table">
+              <caption class="visually-hidden">Desired behavior, status, and findings from the supplied deployed-widget inspection</caption>
+              <thead>
+                <tr><th scope="col">Desired behavior</th><th scope="col">Status</th><th scope="col">Finding</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Open chat on page load</th>
+                  <td><span class="capability-status">Integration needed</span></td>
+                  <td>No exposed auto-open command in the current embed. Requires widget changes or a supported SDK.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Show a full-page chat</th>
+                  <td><span class="capability-status">Layout changes</span></td>
+                  <td>The desktop chat currently opens at 380px wide. A full-page experience needs a different layout.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Prefill Name, Email &amp; Phone</th>
+                  <td><span class="capability-status">Not forwarded</span></td>
+                  <td>The test URL left the form empty. These parameters are not forwarded into the widget.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Skip the form &amp; start chat</th>
+                  <td><span class="capability-status">Initialization needed</span></td>
+                  <td>Requires a programmatic initialization method inside the widget.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Attach an existing <code>contact_id</code></th>
+                  <td><span class="capability-status status-unverified">Unverified</span></td>
+                  <td>The widget uses a generated <code>webClientUUID</code>; contact submission sends only name, email, and phone.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="inspection-note">The supplied URL/form test used synthetic contact details, without submitting a contact or sending a message.</p>
+        </div>
+
+        <div class="flow-panel">
+          <div class="flow-heading">
+            <span class="flow-label">Recommended implementation</span>
+            <h3>From a signed link to a conversation</h3>
+            <p>Proposed flow, dependent on supported contact identification and chat initialization.</p>
+          </div>
+          <ol class="flow-steps">
+            <li>
+              <span class="step-number" aria-hidden="true">01</span>
+              <h4>Open a signed link</h4>
+              <p>The link carries a signed token associated with the customer&rsquo;s <code>contact_id</code>.</p>
+            </li>
+            <li>
+              <span class="step-number" aria-hidden="true">02</span>
+              <h4>Resolve the contact</h4>
+              <p>Your backend validates the token and retrieves the customer&rsquo;s name, email, and phone.</p>
+            </li>
+            <li>
+              <span class="step-number" aria-hidden="true">03</span>
+              <h4>Initialize &amp; open chat</h4>
+              <p>A supported widget integration identifies the contact, opens the window, and enters chat directly.</p>
+            </li>
+          </ol>
+        </div>
+
+        <aside class="dependency-note" aria-labelledby="dependency-title">
+          <span class="dependency-icon" aria-hidden="true">↗</span>
+          <div>
+            <h3 id="dependency-title">The key dependency: SleekFlow contact identification</h3>
+            <p>SleekFlow must support identifying an existing contact and starting its chat session. This page cannot directly fill or click inside the cross-origin iframe.</p>
+            <p>The newer AI Growth Widget documents a JavaScript API for opening and hiding the widget. That documentation does not establish support for identifying a contact or automatically initializing their chat.</p>
+          </div>
+        </aside>
+
+        <div class="sources">
+          <span>Sources</span>
+          <a href="https://chat.sleekflow.io/embed_iframe.js" target="_blank" rel="noopener noreferrer">Legacy embed script <span aria-hidden="true">↗</span></a>
+          <a href="https://chat.sleekflow.io/assets/33.2330bba3.js" target="_blank" rel="noopener noreferrer">Legacy contact-form code <span aria-hidden="true">↗</span></a>
+          <a href="https://help.sleekflow.io/en_US/setting-up-and-managing-your-live-chat-widget-ver2#when-to-show" target="_blank" rel="noopener noreferrer">AI Growth Widget documentation <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>&copy; <span id="year"></span> Live Widget</span>
+      <span>Powered by SleekFlow</span>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script src="/widget-view.js" defer></script>
+    <script src="/full-view/widget-embed.js" type="module"></script>
+  </body>
+</html>

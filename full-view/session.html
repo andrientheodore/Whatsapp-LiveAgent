@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Live chat</title>
+    <link rel="stylesheet" href="/full-view/session.css" />
+    <script src="/full-view/session.js" type="module"></script>
+  </head>
+  <body data-view="contact">
+    <aside class="welcome-panel" aria-labelledby="welcome-title">
+      <div class="welcome-content">
+        <span class="welcome-wave" aria-hidden="true">👋</span>
+        <h1 id="welcome-title">Hello! Welcome</h1>
+        <p id="welcome-subtitle" class="welcome-agent">Live support</p>
+        <p id="contact-notice" class="welcome-agent" role="status" hidden></p>
+        <p class="welcome-note"><svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.5" y="8.5" width="13" height="9" rx="2"/><path d="M6.5 8.5v-3a3.5 3.5 0 0 1 7 0v3"/></svg><span id="welcome-note-text">Chat directly with our team</span></p>
+      </div>
+    </aside>
+    <main id="chat-client" aria-label="Live chat"></main>
+  </body>
+</html>

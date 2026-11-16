@@ -1,0 +1,22 @@
+# Copy to .dev.vars and replace the empty values with your own widget settings.
+# Never commit .dev.vars. Restart npm run dev after changing it.
+
+# Server only. Optional unless using contact lookup or conversation notes.
+SLEEKFLOW_API_KEY=""
+SLEEKFLOW_API_BASE_URL="https://api.sleekflow.io"
+SLEEKFLOW_APP_BASE_URL="https://app.sleekflow.io/en"
+CONVERSATION_NOTE_LABEL="User initiated a live chat conversation"
+
+# Public widget settings (visible to visitors through /api/config).
+SLEEKFLOW_WIDGET_SCRIPT_URL="https://slceasprodbe932739.z7.web.core.windows.net/widget.js"
+SLEEKFLOW_WIDGET_API_BASE_URL="https://sleekflow-core-production-hac3h0azhvcub0aq.z01.azurefd.net"
+SLEEKFLOW_COMPANY_ID=""
+SLEEKFLOW_WIDGET_ID=""
+SLEEKFLOW_REGION="eastasia"
+
+# Public presentation settings. Text is rendered as plain text, never HTML.
+CHAT_TITLE="Live support"
+WELCOME_TITLE="Hello! Welcome"
+WELCOME_SUBTITLE="Live support"
+WELCOME_NOTE="Chat directly with our team"
+HIDE_AGENT_NAMES="true"

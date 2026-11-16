@@ -1,0 +1,27 @@
+/* Overrides are isolated to this full-view instance's open shadow root. */
+#sleekflow-widget-app { position: relative !important; inset: auto !important; width: 100% !important; height: 100% !important; }
+[data-testid="chat-widget-button"] { display: none !important; }
+[data-full-view-minimize] { display: none !important; }
+[data-hidden-agent-name] { display: none !important; }
+:host([data-full-view="contact"]) [data-full-view-back] { display: none !important; }
+[data-widget-viewport] { margin: 0 !important; width: 100% !important; height: 100% !important; }
+[data-widget-viewport] > div { width: 100% !important; height: 100% !important; max-height: none !important; border-radius: 0 !important; box-shadow: none !important; }
+[data-widget-viewport] > div > div { max-width: none !important; border-radius: 0 !important; }
+input, textarea { font-size: 16px !important; }
+[data-contact-form] { width: 100%; }
+:host([data-full-view="contact"]) [data-widget-window] { background: #fff !important; }
+:host([data-full-view="contact"]) [data-full-view-header] { padding: 20px 32px !important; border-bottom: 1px solid #edf0f5; }
+:host([data-full-view="contact"]) [data-contact-scroll] { display: flex !important; flex-direction: column; justify-content: safe center; align-items: center; padding: 32px clamp(24px, 6vw, 72px) !important; }
+:host([data-full-view="contact"]) [data-contact-scroll] > div { width: 100%; max-width: 480px !important; }
+:host([data-full-view="contact"]) [data-contact-path] { width: 100% !important; max-width: 100% !important; }
+:host([data-full-view="contact"]) [data-contact-card] { width: 100% !important; max-width: 100% !important; background: #fff !important; border-radius: 0 !important; box-shadow: none !important; padding: 0 !important; }
+:host([data-full-view="contact"]) figure:has(> img[alt="Agent Avatar"]) { display: none; }
+:host([data-full-view="contact"]) [data-widget-window] > div:last-child button { min-height: 44px; padding: 8px 24px; font-size: 12px; }
+:host([data-full-view="contact"]) [data-contact-form] { gap: 16px !important; }
+:host([data-full-view="contact"]) [data-contact-form] input { min-height: 44px; }
+:host([data-full-view="contact"]) [data-contact-form] button[type="submit"] { min-height: 44px !important; border-radius: 9px !important; }
+@media (max-width: 767px) {
+  :host([data-full-view="contact"]) [data-full-view-header] { padding: 16px 24px !important; }
+  :host([data-full-view="contact"]) [data-contact-scroll] { padding: 24px !important; justify-content: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
